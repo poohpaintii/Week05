@@ -1,35 +1,44 @@
 ﻿using System;
-using System.IO;
-public class switchLearning
+
+namespace ConsoleApp2
 {
-    public static void Main()
+    class ForEachTest
     {
-        Console.Write("Input your grade (A, B, C, D or F) : ");
-        string gradeString = Console.ReadLine();
-        string message;
-        switch (gradeString.ToUpper())
+        static void Main(string[] args)
         {
-            case "A":
-                message = "Excellent";
-                break;
-            case "B":
-                message = "Good";
-                break;
-            case "C":
-                message = "Cool";
-                break;
-            case "D":
-                message = "Try";
-                break;
-            case "F":
-                message = "Get out!!";
-                break;
-            default:
-                message = "Incorrect grade";
-                break;
+            // Initial string array with month names.
+            string[] monthName = new string[] { "January","February",
+                         "March","April","May","June","July","August",
+                         "September","October","November","December"};
+
+            Console.WriteLine("-------- foreach,in loop");
+            foreach (string month in monthName)
+            {
+                System.Console.WriteLine(month);
+            }
+            System.Console.WriteLine();
+
+            // Compare the previous loop to a similar for loop.
+            Console.WriteLine("-------- for loop");
+            for (int i = 0; i < monthName.Length; i++)
+            {
+                System.Console.WriteLine(monthName[i]);
+            }
+            System.Console.WriteLine();
+
+
+            // You can maintain a count of the elements in the collection.
+            int count = 0;
+            foreach (string month in monthName)
+            {
+                count += 1;
+                System.Console.WriteLine("Element #{0}: {1}", count, month);
+            }
+            System.Console.WriteLine("Number of elements in the array: {0}", count);
+
+            // Keep the console open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
-        Console.WriteLine(message);
     }
 }
-
-
