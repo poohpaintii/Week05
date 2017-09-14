@@ -1,12 +1,23 @@
 ﻿using System;
-
-
-namespace Lab02
+public class TryCatch
 {
-    public class GotoTest
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int a = int.MaxValue;
+        a *= 2; 
+        
+        try
         {
+            Console.WriteLine(a);
         }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        
+        
+        
     }
 }
+
+
