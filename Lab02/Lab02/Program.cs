@@ -1,12 +1,21 @@
 ﻿using System;
-
-
-namespace Lab02
+public class TryCatch
 {
-    public class GotoTest
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int a = 0;
+        int b = 10;
+        try
         {
+            b /= a;
+        
         }
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        Console.WriteLine(a);
     }
+
 }
+
