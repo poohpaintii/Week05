@@ -1,12 +1,21 @@
 ﻿using System;
-
-
-namespace Lab02
+public class TryCatch
 {
-    public class GotoTest
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int value = 800000000;
+        try
+        { 
+           checked // check for overflow
+           {
+                int square = value * value;
+                Console.WriteLine("{0} ^ 2 = {1}", value, square);
+            }
+        }
+        catch (OverflowException e)
         {
+            Console.WriteLine(e.Message);
         }
     }
 }
+
